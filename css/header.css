@@ -1,0 +1,38 @@
+header{
+    width: 100%;
+    padding: 28px 8%;
+}
+
+#navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+#nav_logo {
+    width: 120px;
+    
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: #1cafcc;
+    font-weight: 600;
+
+}
+
+.nav-tem.active a{
+    color: #00AEB3;
+    border-bottom: 3px solid #1CBFBC;
+
+}
