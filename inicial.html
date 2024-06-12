@@ -42,6 +42,10 @@
                     <a href="perfil.html">Perfil</a>
                  </li>
 
+                 <li class="nav-item">
+                    <a href="info.html">Informações</a>
+                 </li>
+
 
             </ul>
 
@@ -170,6 +174,13 @@
                 <label for="telefone">Telefone:</label>
                 <input class= "label-input" type="tel" id="phone" name="phone" required>
 
+                <label for="sintomas">Sintomas:</label>
+                <input class= "label-input" type="text" id="sintomas" name="sintomas" required>
+
+                <label for="consultaLocal">Local da Consulta:</label>
+                <input class= "label-input" type="text" id="consultaLocal" name="consultaLocal">
+
+
                 <label for="medico">Médico:</label>
                 <select class= "label-input" id="medico" name="medico" >
 
@@ -181,10 +192,7 @@
                 <option value="">Dra. Victoria Gonçalves</option>
 
                 </select>
-
-                <label for="consultaLocal">Local da Consulta:</label>
-                <input class= "label-input" type="text" id="consultaLocal" name="consultaLocal">
-
+      
                 <label for="consultaData">Data da Consulta:</label>
                 <input class= "label-input" type="date" id="consultaData" name="consultaData">
 
@@ -195,7 +203,64 @@
         </section>
 
         <section id="consultaAgendamentos">
-            <h3>Consultar agendamentos</h3>
+            <h3 style="color:#00AEB3; ">Exames agendados</h3>
+            
+            <div class="containerConsulta">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Data</th>
+                            <th>Tipo de exame</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Ana Monteiro</td>
+                            <td>22/06/2024</td>
+                            <td>Ultrassom</td>
+                            <td>Confirmado</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                
+            </div>
+
+            
+
+        </section>
+
+        <section id="consultasAgendadas">
+            <h3 style="color:#00AEB3; ">Consultas agendadas</h3>
+            
+            <div class="containerConsulta">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Local</th>
+                            <th>Data</th>
+                            <th>Médico</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Ana Monteiro</td>
+                            <td>Clinica matriz</td>
+                            <td>22/06/2024</td>
+                            <td>Doutora Camila Pedrazzi</td>
+                            <td>Confirmado</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                
+            </div>
 
             
 

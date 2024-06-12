@@ -58,6 +58,8 @@
 }
 
 
+
+
 #mainForm input{
      height: 45px;
      width: 80%;
@@ -107,4 +109,57 @@ color: #00AEB3;
 
 .mensagem-oculta {
     display: none;
+}
+
+.containerConsulta{
+    width: 80%;
+    margin: 20px auto;
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #66d7d3;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #66d7d3;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.containerInfo{
+    width: 100%;
+    margin: 20px auto;
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+   
+
 }
