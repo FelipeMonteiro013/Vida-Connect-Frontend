@@ -4,76 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicial</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/generic.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/home.css"/>
-   
-    
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/generic.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/home.css" />
 
 </head>
+
 <body>
     <header>
         <nav id="navbar">
             <img src="img/vida-connect-logo-2.png" id="nav_logo">
             <ul id="nav_list">
                 <li class="nav-item active">
-                   <a onclick="scrollToSection('home')">Início</a>
+                    <a onclick="scrollToSection('home')">Início</a>
                 </li>
 
                 <li class="nav-item">
                     <a onclick="scrollToSection('agendamentos')">Agendamentos</a>
-                 </li>
+                </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a onclick="scrollToSection('exames')">Exames</a>
-                 </li>
+                </li>
 
-                 <li class="nav-item">
-                    <a onclick="scrollToSection('consultas')" >Consultas</a>
-                 </li>
+                <li class="nav-item">
+                    <a onclick="scrollToSection('consultas')">Consultas</a>
+                </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="registers.html">Cadastros</a>
-                 </li>
+                </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="perfil.html">Perfil</a>
-                 </li>
+                </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="info.html">Informações</a>
-                 </li>
+                </li>
 
 
             </ul>
 
             <button a onclick="scrollToSection('agendamentos')" class="btn-default">
                 Agende aqui
-                
+
             </button>
 
-        
+
 
         </nav>
 
     </header>
-    
+
     <main id="content">
         <section id="home">
-            
+
             <div id="cta">
                 <h1 class="title">
                     Seu bem estar é uma <span>jornada,</span>
                     não um destino!
-                    
+
                 </h1>
                 <p class="description">
                     Junte-se a nós e comece hoje mesmo essa jornada emocionante.
-                    Porque o seu bem-estar não é um objetivo a ser alcançado, 
+                    Porque o seu bem-estar não é um objetivo a ser alcançado,
                     mas uma experiência a ser vivida.
-            
+
                 </p>
 
                 <div id="cta_buttons">
@@ -84,7 +84,6 @@
                     <a href="tel:+5511916571894" id="phone_button">
                         <button class="btn-default">
                             <i class="fa-solid fa-phone"></i>
-                            
                         </button>
                         Atendimento
                     </a>
@@ -104,145 +103,140 @@
 
             <h2 class="title">Agendamento</h2>
             <form id="mainForm">
-                
-                <label for="tipo"Escolha o tipo:></label>
-                <select class= "label-input" id="tipo" name="tipo" onchange="updateForm()">
+                <label for="tipo" Escolha o tipo:></label>
+                <select class="label-input" id="tipo" name="tipo" onchange="updateForm()">
                     <option value="">Selecione...</option>
                     <option value="exames">Exames</option>
                     <option value="consultas">Consultas</option>
                 </select>
-
-
             </form>
 
             <div id="examesFields" class="hidden nameForms">
                 <h3>Preencha os campos a seguir</h3>
 
-                <label for="name">Nome:</label>
-                <input class= "label-input" type="text" id="name" name="name" required>
+                <form id="examForm">
+                    <label for="documento">Número do documento</label>
+                    <input class="label-input" type="text" id="documento" name="documento" required>
 
-                <label for="dataNascimento">Data de nascimento:</label>
-                <input class= "label-input" type="date" id="dataNascimento" name="dataNascimento" required>
+                    <label for="name">Nome:</label>
+                    <input class="label-input" type="text" id="exameName" name="name" required>
 
-                <label for="documento">Número do documento</label>
-                <input class= "label-input" type="text" id="documento" name="documento" required>
-          
-                <label for="email">Email:</label>
-                <input class= "label-input" type="email" id="email" name="email" required>
+                    <label for="dataNascimento">Data de nascimento:</label>
+                    <input class="label-input" type="date" id="exameDataNascimento" name="dataNascimento" required>
 
-                <label for="telefone">Telefone:</label>
-                <input class= "label-input" type="tel" id="phone" name="phone" required>
+                    <label for="email">Email:</label>
+                    <input class="label-input" type="email" id="exameEmail" name="email" required>
 
-                <label for="exameTipo">Tipo de Exame:</label>
-                <select class= "label-input" id="exameTipo" name="exameTipo">
+                    <label for="exameTipo">Tipo de Exame:</label>
+                    <select class="label-input" id="exameTipo" name="exameTipo">
+                        <option value="">Selecione o tipo de exame</option>
+                    </select>
 
-                <option value="">Selecione o tipo de exame</option>
-                <option value="sangue">Exame de Sangue</option>
-                <option value="urina">Exame de Urina</option>
-                <option value="raio-x">Raio-X</option>
-                <option value="ultrassom">Ultrassom</option>
-                <option value="tomografia">Tomografia</option>
+                    <label for="exameLocal">Local do Exame:</label>
+                    <select class="label-input" id="exameClinica" name="exameClinica">
+                        <option value="">Selecione a clinica</option>
+                    </select>
 
-                </select>
+                    <label for="exameData">Data do Exame:</label>
+                    <input class="label-input" type="date" id="exameData" name="exameData">
 
-                <label for="exameLocal">Local do Exame:</label>
-                <input class= "label-input" type="text" id="exameLocal" name="exameLocal">
+                    <label for="exameHorario">Horário do Exame:</label>
+                    <input class="label-input" type="time" id="exameHorario" name="exameHorario">
 
-                <label for="exameData">Data do Exame:</label>
-                <input class= "label-input" type="date" id="exameData" name="exameData">         
-            
-                <button  id="agendarButton" class="btn-default" type="submit">Agendar</button>
+                    <button id="agendarButton" class="btn-default" type="submit">Agendar</button>
+                </form>
                 <div id="mensagem" class="mensagem-oculta">Exame agendado com sucesso!</div>
-
             </div>
 
             <div id="consultasFields" class="hidden">
                 <h4>Agendamento de Consultas</h4>
 
+                <form id="consultaForm">
+
+                <label for="documento">Documento:</label>
+                <input class="label-input" type="text" id="documentoConsulta" name="documento" required>
+
                 <label for="name">Nome:</label>
-                <input class= "label-input" type="text" id="name" name="name" required>
+                <input class="label-input" type="text" id="consultaName" name="name" required disabled>
 
                 <label for="dataNascimento">Data de nascimento:</label>
-                <input class= "label-input" type="date" id="dataNascimento" name="dataNascimento" required>
+                <input class="label-input" type="date" id="consultaDataNascimento" name="dataNascimento" required disabled>
 
-                <label for="documento">Número do documento</label>
-                <input class= "label-input" type="text" id="documento" name="documento" required>
-          
                 <label for="email">Email:</label>
-                <input class= "label-input" type="email" id="email" name="email" required>
+                <input class="label-input" type="email" id="consultaEmail" name="email" required disabled>
 
-                <label for="telefone">Telefone:</label>
-                <input class= "label-input" type="tel" id="phone" name="phone" required>
+                <label for="consultaMotivo">Motivo da consulta:</label>
+                <input class="label-input" type="text" id="consultaMotivo" name="consultaMotivo">
 
                 <label for="sintomas">Sintomas:</label>
-                <input class= "label-input" type="text" id="sintomas" name="sintomas" required>
+                <input class="label-input" type="text" id="sintomas" name="sintomas" required>
 
                 <label for="consultaLocal">Local da Consulta:</label>
-                <input class= "label-input" type="text" id="consultaLocal" name="consultaLocal">
+                    <select class="label-input" type="text" id="consultaLocal" name="consultaLocal">
+                        <option value="">Selecione a clinica</option>
+                    </select>
 
 
                 <label for="medico">Médico:</label>
-                <select class= "label-input" id="medico" name="medico" >
+                <select class="label-input" type="text" id="consultaMedico" name="medico">
 
-                <option value="">Selecione o profissional responsável</option>
-                <option value="">Dra. Ana Clara Martins</option>
-                <option value="">Dr. Pedro Ramos</option>
-                <option value="">Dra. Camila Gonçalves</option>
-                <option value="">Dr. Felipe Monteiro</option>
-                <option value="">Dra. Victoria Gonçalves</option>
+                    <option value="">Selecione o profissional responsável</option>
+                    
 
                 </select>
-      
+
                 <label for="consultaData">Data da Consulta:</label>
-                <input class= "label-input" type="date" id="consultaData" name="consultaData">
+                <input class="label-input" type="date" id="consultaData" name="consultaData">
+
+                
+                <label for="consultaHorario">Horário do Exame:</label>
+                <input class="label-input" type="time" id="consultaHorario" name="consultaHorario">
+
 
                 <button class="btn-default" type="submit">Agendar</button>
+            </form>
 
 
             </div>
         </section>
 
-        <section id="consultaAgendamentos">
+        <section id="ExamesAgendados">
             <h3 style="color:#00AEB3; ">Exames agendados</h3>
-            
+            <div id="result"></div>
             <div class="containerConsulta">
-                <table>
+                <table id="dataTable">
                     <thead>
                         <tr>
                             <th>Paciente</th>
+                            <th>Tipo do exame</th>
                             <th>Data</th>
-                            <th>Tipo de exame</th>
+                            <th>Horário</th>
+                            <th>Local</th>
                             <th>Status</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Ana Monteiro</td>
-                            <td>22/06/2024</td>
-                            <td>Ultrassom</td>
-                            <td>Confirmado</td>
-                        </tr>
-                        
+
                     </tbody>
                 </table>
-                
+
             </div>
 
-            
+
 
         </section>
 
         <section id="consultasAgendadas">
             <h3 style="color:#00AEB3; ">Consultas agendadas</h3>
-            
             <div class="containerConsulta">
-                <table>
+                <table id="dataTableConsul">
                     <thead>
                         <tr>
                             <th>Paciente</th>
                             <th>Local</th>
                             <th>Data</th>
+                            <th>Horário</th>
                             <th>Médico</th>
                             <th>Status</th>
                         </tr>
@@ -250,27 +244,27 @@
 
                     <tbody>
                         <tr>
-                            <td>Ana Monteiro</td>
-                            <td>Clinica matriz</td>
-                            <td>22/06/2024</td>
-                            <td>Doutora Camila Pedrazzi</td>
-                            <td>Confirmado</td>
+                            
                         </tr>
-                        
+
                     </tbody>
                 </table>
-                
+
             </div>
 
-            
+
 
         </section>
-    
+
 
 
     </main>
 
     <script src="js/script.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="./js/exames.js"> </script>
+    <script src="./js/config.js"> </script>
+    <script type= "module" src="./js/consulta.js"></script>
 </body>
+
 </html>
