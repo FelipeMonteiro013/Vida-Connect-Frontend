@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informações Internas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/generic.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/home.css"/>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/generic.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/home.css" />
 </head>
+
 <body>
     <header>
         <nav id="navbar">
-            <img src="img/vida-connect-logo-2.png" id="nav_logo">
+            <a href="inicial.html">
+                <img src="img/vida-connect-logo-2.png" id="nav_logo">
+            </a>
             <ul id="nav_list">
                 <li class="nav-item active">
-                   <a onclick="scrollToSection('home')">Início</a>
+                    <a href="inicial.html">Início</a>
+                </li>                
+
+                <li class="nav-item">
+                    <a href="#clinicas">Clinicas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="inicial.html" onclick="scrollToSection('agendamentos')">Agendamentos</a>
-                 </li>
+                    <a href="#medicos">Médicos</a>
+                </li>
 
+                <li class="nav-item">
+                    <a href="#pacientes">Pacientes</a>
+                </li>
 
-                 <li class="nav-item">
-                    <a href="registers.html">Cadastros</a>
-                 </li>
-
-                 <li class="nav-item">
-                    <a href="perfil.html">Perfil</a>
-                 </li>
-
+                <li class="nav-item">
+                    <a href="index.html">Sair</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <section id="clinicas">
-        <h3 style="color:#00AEB3; ">Clinicas</h3>
-        
+        <h3 style="color:#00AEB3;">Clinicas</h3>
         <div class="containerInfo">
-            <table>
+            <table id="dataTableClinica">
                 <thead>
                     <tr>
                         <th>Razão social</th>
@@ -48,7 +56,6 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>Clinivac LTDA</td>
@@ -58,89 +65,66 @@
                         <td>clinivac@agendamento.com</td>
                         <td>Ativa</td>
                     </tr>
-                    
+
                 </tbody>
             </table>
-            
         </div>
-
-        
-
     </section>
+
     <section id="medicos">
         <h3 style="color:#00AEB3; ">Médicos</h3>
-        
         <div class="containerInfo">
-            <table>
-
+            <table id="dataTableMedico">
                 <thead>
                     <tr>
-                        <th>Nome</th>
                         <th>CRM</th>
-                        <th>Especialidade</th>
+                        <th>Nome</th>
                         <th>Telefone</th>
+                        <th>Especialidade</th>
                         <th>Email</th>
+                        <th>Clinica de Atendimento</th>
                         <th>Status</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>Dra. Carla Biazzi</td>
-                        <td>CRM-SP6677</td>
-                        <td>Dermatologia</td>
-                        <td>(11) 4002-8922</td>
-                        <td>biazzi.carla@clinivac.com</td>
-                        <td>Ativa</td>
+                        
                     </tr>
-                    
+
                 </tbody>
             </table>
-            
         </div>
-
-        
-
     </section>
 
     <section id="pacientes">
         <h3 style="color:#00AEB3; ">Pacientes</h3>
-        
         <div class="containerInfo">
-            <table>
-
+            <table id="dataTablePaciente">
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Data de Nascimento</th>
                         <th>Documento</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>Patricia Gonçalves</td>
-                        <td>patricia.g@gmail.com</td>
-                        <td>21/01/2004</td>
-                        <td>539397786</td>
-                        <td>Ativa</td>
+                        
                     </tr>
-                    
+
                 </tbody>
             </table>
-            
         </div>
-
-        
-
     </section>
-        
 
 
+    <!-- <script src="js/exames.js"> </script> -->
+    <script  src="./js/info.js"></script>
 
-    
+
 </body>
-</html>
 
+</html>

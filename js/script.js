@@ -1,3 +1,6 @@
+if (!localStorage.getItem("loggedUserId")) {
+    window.location.href = 'index.html';
+}
 
 
 function updateForm() {

@@ -102,13 +102,15 @@ body{
 .btn{
     border-radius: 15px;
     padding: 10px 50px;
-    font-size: 10px;
+    font-size: 12px;
     cursor: pointer;
     font-weight: bold;
     width: 150px;
     align-self: center;
     border-width: 0;
     margin-top: 1rem;
+    background-color: #00AEB3;
+    color: white;
 
 }
 
@@ -182,9 +184,6 @@ body{
     border-radius: 15px;
     border-top-right-radius: 15px; /* Define o raio da borda superior direita */
     border-bottom-right-radius: 15px;
-    
-
-
 }
 
 input:-webkit-autofill{
@@ -271,4 +270,24 @@ align-items: center;
 .sign-up-js .first-content .second-column{
     z-index: 11;
 
+}
+
+thead, tbody{
+  display: block;  
+}
+
+tbody{
+  overflow-y: scroll;
+  height: 100px;
+  }
+
+.login-input{
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    font-family: Arial, sans-serif; 
+    background-color: #f9f9f9;
+    box-sizing: border-box;
 }

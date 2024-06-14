@@ -3,6 +3,12 @@
 // const baseURL = "http://ec2-44-223-23-150.compute-1.amazonaws.com:3000"
 const baseURL = "http://ec2-44-223-23-150.compute-1.amazonaws.com:3000"
 
+
+
+if (!localStorage.getItem("loggedUserId")) {
+    window.location.href = 'index.html';
+}
+
 var lista = [];
 var listaDeExames = [];
 var listaDeClinicas = [];
@@ -41,8 +47,42 @@ const getListaExames = async () => {
             var celulaReason = novaLinha.insertCell(5);
             celulaReason.textContent = item.status;
 
+            var btnConfirmar = document.createElement('button');
+            btnConfirmar.className = 'icon-button';
+            btnConfirmar.innerHTML = '<i class="fas fa-check"></i>';
+            btnConfirmar.addEventListener('click', function () {
+                if (confirm("Deseja atualizar o status deste item ?")) {
+                    updateExameStatus(item)
+                    
+                }
+
+            });
+
+            var celulaAcoes = novaLinha.insertCell(6);
+            if(item.status == "Pendente"){
+                celulaAcoes.appendChild(btnConfirmar);
+
+            }
+
         });
     }).catch(error => console.error('Ocorreu um erro:', error))
+}
+
+const updateExameStatus = async (data) => {
+
+    data.status = "Concluído"
+
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+
+    await fetch(`${baseURL}/exam/${data._id}`, requestOptions).then(response => response.json()).then(data => {
+        
+    }).catch(error => console.error('Ocorreu um erro:', error))
+
+    location.reload();  
 }
 
 // Função para formatar CPF
@@ -88,9 +128,7 @@ const getPacientePorDocumento = async (id, type) => {
                 var consultaEmail = document.getElementById("consultaEmail")
                 consultaEmail.value = data.email
                 consultaEmail.disabled = true;
-
             } else {
-
                 var exameName = document.getElementById("exameName")
                 exameName.value = data.name
                 exameName.disabled = true;
@@ -102,7 +140,6 @@ const getPacientePorDocumento = async (id, type) => {
                 var exameEmail = document.getElementById("exameEmail")
                 exameEmail.value = data.email
                 exameEmail.disabled = true;
-
             }
             patientId = data._id
         }
@@ -137,6 +174,12 @@ const getListarTiposDeClinicas = async () => {
             optionElement.textContent = element.corporateReason;
             optionElement.value = element._id;
             exameClinica.appendChild(optionElement)
+        });
+        
+        listaDeClinicas.forEach(element => {
+            var optionElement = document.createElement("option");
+            optionElement.textContent = element.corporateReason;
+            optionElement.value = element._id;
             consultaLocal.appendChild(optionElement)
         });
     }).catch(error => console.error('Ocorreu um erro:', error))
@@ -166,7 +209,6 @@ formElement.addEventListener("submit", function (event) {
             date: `${dataExame}T${exameHorario}:00.000Z`,
             status: "Pendente"
         }
-
         cadastrarExame(data)
     }
 });
@@ -202,19 +244,35 @@ const getListaDeConsultas = async () => {
             var colunaPaciente = novaLinha.insertCell(0)
             colunaPaciente.textContent = item.patient_id.name
             var colunaLocal = novaLinha.insertCell(1)
+            colunaLocal.textContent = item.reason
+            var colunaLocal = novaLinha.insertCell(2)
             colunaLocal.textContent = item.clinic_id.corporateReason
-            var colunaData = novaLinha.insertCell(2)
+            var colunaData = novaLinha.insertCell(3)
             colunaData.textContent = new Date(item.date).toLocaleString().split(",")[0]
-            var colunaHorario = novaLinha.insertCell(3)
+            var colunaHorario = novaLinha.insertCell(4)
             colunaHorario.textContent = item.date.substr(11, 5)
-            var colunaMedico = novaLinha.insertCell(4)
+            var colunaMedico = novaLinha.insertCell(5)
             colunaMedico.textContent = item.doctor_id.name
-            var colunaStatus = novaLinha.insertCell(5)
+            var colunaStatus = novaLinha.insertCell(6)
             colunaStatus.textContent = item.status
 
+            var btnConfirmar = document.createElement('button');
+            btnConfirmar.className = 'icon-button';
+            btnConfirmar.innerHTML = '<i class="fas fa-check"></i>';
+            btnConfirmar.addEventListener('click', function () {
+                if (confirm("Deseja atualizar o status deste item ?")) {
+                    updateConsultaStatus(item)
+                    
+                }
 
+            });
+
+            var colunaAcoes = novaLinha.insertCell(7);
+            if(item.status == "Pendente"){
+                colunaAcoes.appendChild(btnConfirmar);
+
+            }
         })
-
     })
 }
 
@@ -224,22 +282,18 @@ inputDocumentoConsulta.addEventListener("input", function () {
     var cpfFormatado = formatarCPF(valorAtual)
     inputDocumentoConsulta.value = cpfFormatado
     getPacientePorDocumento(inputDocumentoConsulta.value, "consulta")
-
 })
 
 const getListarMedicos = async () => {
     await fetch(`${baseURL}/doctor`).then(response => response.json()).then(data => {
         listaDeMedicos = data
-        console.log(listaDeMedicos)
         var consultaMedico = document.getElementById("consultaMedico")
-
 
         listaDeMedicos.forEach(element => {
             var optionElement = document.createElement("option");
             optionElement.textContent = element.name;
             optionElement.value = element._id;
             consultaMedico.appendChild(optionElement)
-
         });
     }).catch(error => console.error('Ocorreu um erro:', error))
 }
@@ -249,7 +303,6 @@ var consultaForm = document.getElementById("consultaForm")
 consultaForm.addEventListener("submit", function (event) {
     event.preventDefault()
 
-
     var sintomas = document.getElementById("sintomas").value
     var data = document.getElementById("consultaData").value
     var horario = document.getElementById("consultaHorario").value
@@ -257,9 +310,7 @@ consultaForm.addEventListener("submit", function (event) {
     var local = document.getElementById("consultaLocal").value
     var motivo = document.getElementById("consultaMotivo").value
 
-    if (
-        sintomas, data, horario, medico, local, motivo
-    ) {
+    if (sintomas, data, horario, medico, local, motivo) {
         var data = {
             symptoms: sintomas,
             date: `${data}T${horario}:00.000Z`,
@@ -268,16 +319,13 @@ consultaForm.addEventListener("submit", function (event) {
             clinic_id: local,
             doctor_id: medico,
             status: "Pendente"
-
-
         }
         cadastrarConsulta(data)
-
     }
 
 })
 
-const cadastrarConsulta = async(data)=>{
+const cadastrarConsulta = async (data) => {
 
     const requestOptions = {
         method: 'POST',
@@ -291,11 +339,26 @@ const cadastrarConsulta = async(data)=>{
 
 }
 
+const updateConsultaStatus = async (data) => {
+
+    data.status = "Concluído"
+
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+
+    await fetch(`${baseURL}/medicalAppointment/${data._id}`, requestOptions).then(response => response.json()).then(data => {
+        
+    }).catch(error => console.error('Ocorreu um erro:', error))
+    
+    location.reload();  
+}
 
 
 
-
-
+// ************************************************ Clinicas ********************************************************
 
 
 

@@ -57,9 +57,23 @@ section {
     text-align: center;
 } 
 
+.icon-button{
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    border: #00AEB3 solid 1px;
+    color: #00AEB3;
+    cursor: pointer;
+    margin-left: 10px;
+}
 
-
-
-
-
-
+.icon-button:hover{
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    border: #00AEB3 solid 1px;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #00AEB3;
+}
