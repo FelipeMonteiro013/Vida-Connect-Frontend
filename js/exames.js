@@ -1,4 +1,4 @@
-import { status } from "express/lib/response";
+
 
 // const baseURL = "http://ec2-44-223-23-150.compute-1.amazonaws.com:3000"
 const baseURL = "http://ec2-44-223-23-150.compute-1.amazonaws.com:3000"
@@ -271,13 +271,25 @@ consultaForm.addEventListener("submit", function (event) {
 
 
         }
-        console.log(data)
+        cadastrarConsulta(data)
 
     }
 
 })
 
+const cadastrarConsulta = async(data)=>{
 
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+
+    await fetch(`${baseURL}/medicalAppointment`, requestOptions).then(response => response.json()).then(data => {
+        location.reload();
+    }).catch(error => console.error('Ocorreu um erro:', error))
+
+}
 
 
 
