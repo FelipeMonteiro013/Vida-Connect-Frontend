@@ -44,22 +44,22 @@
             
         
 
-    <form>
+    <form id="patientTable">
 
         <label for="name">Nome:</label>
-        <input class= "label-add" type="text" id="name" name="name" required>
+        <input class= "label-add" type="text" id="namePatient" name="name" required>
 
         <label for="email">Email:</label>
-        <input class= "label-add" type="email" id="email" name="email" required>
+        <input class= "label-add" type="email" id="emailPatient" name="email" required>
 
         <label for="dataNascimento">Data de nascimento:</label>
-        <input class= "label-add" type="date" id="dataNascimento" name="dataNascimento" required>
+        <input class= "label-add" type="date" id="patDataNascimento" name="dataNascimento" required>
 
         <label for="password">Senha:</label>
-        <input class= "label-add" type="password" id="password" name="password" required>
+        <input class= "label-add" type="password" id="patientPassword" name="password" required>
 
         <label for="document">Documento:</label>
-        <input class= "label-add" type="text" id="document" name="document" required>
+        <input class= "label-add" type="text" id="patientDocument" name="document" required>
 
         <button  id="patientAdd" class="btn-add" type="submit">Cadastrar paciente</button>
              <div id="added" class="mensagem-oculta">Paciente cadastrado com sucesso!</div>
@@ -80,25 +80,31 @@
         <div class="container">
             
         
-        <form>
+        <form id="doctorTable">
 
         <label for="name">Nome:</label>
-        <input class= "label-add" type="text" id="name" name="name" required>
+        <input class= "label-add" type="text" id="doctorName" name="name" required>
 
         <label for="crm">CRM:</label>
         <input class= "label-add" type="text" id="crm" name="crm" required>
 
         <label for="idEspeciality">Especialidade:</label>
-        <input class= "label-add" type="text" id="name" name="name" required>
+        <select class= "label-add" type="text" id="specialityName" name="name" required>
 
-        <label for="idLocal">Clinica de atuação:</label>
-        <input class= "label-add" type="text" id="idLocal" name="idLocal" required>
+            <option value="">Selecione a especialidade</option>
+
+        </select>
+
+        <label for="idLocal">Clínica de atuação:</label>
+        <select class= "label-add" type="text" id="clinicLocal" name="idLocal" required>
+            <option value="">Selecione a clínica de atuação</option>
+        </select>
 
         <label for="tel">Telefone:</label>
-        <input class= "label-add" type="tel" id="tel" name="tel" required>
+        <input class= "label-add" type="tel" id="telDoctor" name="tel" required>
 
         <label for="email">Email:</label>
-        <input class= "label-add" type="email" id="email" name="email" required>
+        <input class= "label-add" type="email" id="emailDoctor" name="email" required>
 
         <label for="status">Status:</label>
         <select class="label-add" type="status" name="status" required>
@@ -126,6 +132,7 @@
     </main>
 
     <script src="js/script.js" defer></script>
+    <script src="js/registers.js"></script>
 </body>    
 
 </html>
